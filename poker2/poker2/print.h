@@ -1,4 +1,3 @@
-#pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<string.h>
@@ -7,7 +6,7 @@ using namespace std;
 #define CARD_FIV_New  "┏━━━━━━━━┓┏━━━━━━━━┓┏━━━━━━━━┓┏━━━━━━━━┓┏━━━━━━━━┓\n┃%s┃┃%s┃┃%s┃┃%s┃┃%s┃\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n┃%s┃┃%s┃┃%s┃┃%s┃┃%s┃\n┗━━━━━━━━┛┗━━━━━━━━┛┗━━━━━━━━┛┗━━━━━━━━┛┗━━━━━━━━┛\n"
 
 typedef struct  TypePrint{
-		char * row[7];
+		string row[7];
 }TP;
 
 class Print{
@@ -90,23 +89,23 @@ public:
 		switch(ForB){
 
 			case 'f':
-				strncpy_s(ss,Ncount,srt.c_str(),Scount);
+				strncpy(ss,srt.c_str(),Scount);
 				break;
 			case 'b':				
-				strncpy_s(ss + ( Ncount - Scount ) ,Ncount,srt.c_str(),Scount);
+				strncpy(ss + ( Ncount - Scount ) ,srt.c_str(),Scount);
 				break;
 			default:
-				strcpy_s(ss,Ncount,"");
+				strcpy(ss,"");
 				break;
 		}
 
 		return ss;
 	}
 	//引数 Card * 型
-	//返値 char * 型 
+	//返値 string 型 
 	//カードの種類に見合った文字列を返す。
 	//( 0:スペード 1:ダイヤ 2:クラブ 3:ハート)
-	char * charOfType( Card * c ,char num ){
+	string charOfType( Card * c ,char num ){
 		return typePrint[ c->getTypeFlag() ].row[ num - 1 ];
 	}
 
