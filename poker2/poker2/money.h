@@ -1,4 +1,3 @@
-#pragma once 
 
 class Money{
 	//所持金
