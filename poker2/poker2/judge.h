@@ -1,5 +1,4 @@
 #include"card.h"
-
 typedef struct JudgeFlug{
 	unsigned char judgeType : 4;
 	unsigned char HighNum: 4;
