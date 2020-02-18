@@ -2,26 +2,27 @@
 #include<string.h>
 #include<string>
 
+using namespace std;
+
 //フラグタイプ
-typedef struct FLAG {
+struct flag {
 	unsigned char Num  : 4;
 	unsigned char Type : 2;
 	unsigned char Used : 1;
-} flag ;
+} Flag;
 
 //フラグ付きカード共用体　1バイト構成
-typedef union CARDFLAG{
+union CardFlag {
 		flag f;
 		char data;
-} CardFlag ;
+} CardFLAG;
 
-using namespace std;
 /*
 トランプカードの定義
 データは1バイトの容量に収まる。
 */
 class Card{
-	CardFlag tranp;
+	union CardFlag tranp;
 	char NoStr[2];//数字の時のみ使用。
 public:
 
