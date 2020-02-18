@@ -1,3 +1,6 @@
+#ifndef CARD_H
+#define CARD_H
+
 #include<stdio.h>
 #include<string.h>
 #include<string>
@@ -5,24 +8,24 @@
 using namespace std;
 
 //フラグタイプ
-struct flag {
-	unsigned char Num  : 4;
-	unsigned char Type : 2;
-	unsigned char Used : 1;
-} Flag;
+typedef struct {
+	unsigned int Num  : 4;
+	unsigned int Type : 2;
+	unsigned int Used : 1;
+} flag ;
 
 //フラグ付きカード共用体　1バイト構成
-union CardFlag {
+typedef union {
 		flag f;
-		char data;
-} CardFLAG;
+		int data;
+} CardFlag ;
 
 /*
 トランプカードの定義
 データは1バイトの容量に収まる。
 */
 class Card{
-	union CardFlag tranp;
+	CardFlag tranp;
 	char NoStr[2];//数字の時のみ使用。
 public:
 
@@ -184,3 +187,5 @@ public:
 		tranp.f.Used = tranp.f.Used == 1 ? 0 : 1 ;
 	}
 };
+
+#endif
