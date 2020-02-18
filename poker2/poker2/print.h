@@ -1,8 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<string.h>
-using namespace std;
 #include"card.h"
+using namespace std;
+
 #define CARD_FIV_New  "┏━━━━━━━━┓┏━━━━━━━━┓┏━━━━━━━━┓┏━━━━━━━━┓┏━━━━━━━━┓\n┃%s┃┃%s┃┃%s┃┃%s┃┃%s┃\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n┃%s┃┃%s┃┃%s┃┃%s┃┃%s┃\n┗━━━━━━━━┛┗━━━━━━━━┛┗━━━━━━━━┛┗━━━━━━━━┛┗━━━━━━━━┛\n"
 
 typedef struct  TypePrint{
