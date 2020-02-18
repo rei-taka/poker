@@ -1,22 +1,21 @@
-#pragma once
 #include<stdio.h>
 #include<string.h>
 #include<string>
-using namespace std;
 
 //フラグタイプ
-typedef struct flag  {
+typedef struct FLAG {
 	unsigned char Num  : 4;
 	unsigned char Type : 2;
 	unsigned char Used : 1;
-} flag;
+} flag ;
 
 //フラグ付きカード共用体　1バイト構成
-typedef union CardFlag{
+typedef union CARDFLAG{
 		flag f;
 		char data;
-}CardFlag ;
+} CardFlag ;
 
+using namespace std;
 /*
 トランプカードの定義
 データは1バイトの容量に収まる。
