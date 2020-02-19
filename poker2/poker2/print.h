@@ -4,7 +4,7 @@
 #include"card.h"
 using namespace std;
 
-#define CARD_FIV_New  "┏━━━━━━━━┓┏━━━━━━━━┓┏━━━━━━━━┓┏━━━━━━━━┓┏━━━━━━━━┓\n┃%s┃┃%s┃┃%s┃┃%s┃┃%s┃\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n┃%s┃┃%s┃┃%s┃┃%s┃┃%s┃\n┗━━━━━━━━┛┗━━━━━━━━┛┗━━━━━━━━┛┗━━━━━━━━┛┗━━━━━━━━┛\n"
+#define CARD_FIV_New  "┏━━━━━━━━━━━━━━━━┓┏━━━━━━━━━━━━━━━━┓┏━━━━━━━━━━━━━━━━┓┏━━━━━━━━━━━━━━━━┓┏━━━━━━━━━━━━━━━━┓\n┃%s┃┃%s┃┃%s┃┃%s┃┃%s┃\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n%s%s%s%s%s\n┃%s┃┃%s┃┃%s┃┃%s┃┃%s┃\n┗━━━━━━━━━━━━━━━━┛┗━━━━━━━━━━━━━━━━┛┗━━━━━━━━━━━━━━━━┛┗━━━━━━━━━━━━━━━━┛┗━━━━━━━━━━━━━━━━┛\n"
 
 typedef struct  TypePrint{
 		string row[7];
@@ -102,6 +102,7 @@ public:
 
 		return ss;
 	}
+	
 	//引数 Card * 型
 	//返値 string 型 
 	//カードの種類に見合った文字列を返す。
@@ -124,13 +125,13 @@ public:
 		char ssb5[16+1] = "                ";
 
 		printf( CARD_FIV_New	,Copy2(ssf1,c1->getNo(),'f') ,Copy2(ssf2,c2->getNo(),'f'),Copy2(ssf3,c3->getNo(),'f')  ,Copy2(ssf4,c4->getNo(),'f') ,Copy2(ssf5,c5->getNo(),'f')
-								,charOfType(c1, 1 )  		 ,charOfType(c2, 1)			,charOfType(c3, 1),		charOfType(c4, 1)		 		,charOfType(c5, 1)
-								,charOfType(c1, 2 )			 ,charOfType(c2, 2)			,charOfType(c3, 2)		,charOfType(c4, 2)				,charOfType(c5, 2)
-								,charOfType(c1, 3 )			 ,charOfType(c2, 3)			,charOfType(c3, 3)		,charOfType(c4, 3)				,charOfType(c5, 3)
-								,charOfType(c1, 4 )			 ,charOfType(c2, 4)			,charOfType(c3, 4)		,charOfType(c4, 4)				,charOfType(c5, 4)
-								,charOfType(c1, 5 )			 ,charOfType(c2, 5)			,charOfType(c3, 5)		,charOfType(c4, 5)		,charOfType(c5, 5)
-								,charOfType(c1, 6 )			 ,charOfType(c2, 6)			,charOfType(c3, 6)		,charOfType(c4, 6)		,charOfType(c5, 6)
-								,charOfType(c1, 7 ) 		 ,charOfType(c2, 7)			,charOfType(c3, 7)		,charOfType(c4, 7)		,charOfType(c5, 7)
+								,charOfType(c1, 1 ).c_str()  		 ,charOfType(c2, 1).c_str()			,charOfType(c3, 1).c_str()		,charOfType(c4, 1).c_str() 		,charOfType(c5, 1).c_str()
+								,charOfType(c1, 2 ).c_str()			 ,charOfType(c2, 2).c_str()			,charOfType(c3, 2).c_str()		,charOfType(c4, 2).c_str()		,charOfType(c5, 2).c_str()
+								,charOfType(c1, 3 ).c_str()			 ,charOfType(c2, 3).c_str()			,charOfType(c3, 3).c_str()		,charOfType(c4, 3).c_str()		,charOfType(c5, 3).c_str()
+								,charOfType(c1, 4 ).c_str()			 ,charOfType(c2, 4).c_str()			,charOfType(c3, 4).c_str()		,charOfType(c4, 4).c_str()		,charOfType(c5, 4).c_str()
+								,charOfType(c1, 5 ).c_str()			 ,charOfType(c2, 5).c_str()			,charOfType(c3, 5).c_str()		,charOfType(c4, 5).c_str()		,charOfType(c5, 5).c_str()
+								,charOfType(c1, 6 ).c_str()			 ,charOfType(c2, 6).c_str()			,charOfType(c3, 6).c_str()		,charOfType(c4, 6).c_str()		,charOfType(c5, 6).c_str()
+								,charOfType(c1, 7 ).c_str() 		 ,charOfType(c2, 7).c_str()			,charOfType(c3, 7).c_str()		,charOfType(c4, 7).c_str()		,charOfType(c5, 7).c_str()
 								,Copy2(ssb1,c1->getNo(),'b') ,Copy2(ssb2,c2->getNo(),'b'),Copy2(ssb3,c3->getNo(),'b'),Copy2(ssb4,c4->getNo(),'b'),Copy2(ssb5,c5->getNo(),'b') );
 	}
 
